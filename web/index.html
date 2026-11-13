@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<title>Foulée</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<div id="auth" class="auth" hidden>
+  <div class="auth-card">
+    <div class="brand"><h1>Foul<span>é</span>e</h1><small>course · renfo · assiette</small></div>
+    <p class="muted">Ton programme de course et de renfo, tes menus de la semaine et le suivi de ta progression, enregistrés sur ton compte.</p>
+    <div class="seg wide" role="group" aria-label="Connexion ou création de compte"><button type="button" id="authLoginTab" aria-pressed="true">Connexion</button><button type="button" id="authRegTab" aria-pressed="false">Créer un compte</button></div>
+    <form id="authForm" class="stack">
+      <div class="f"><label for="authEmail">Adresse e-mail</label><input type="email" id="authEmail" autocomplete="email" required></div>
+      <div class="f"><label for="authPw">Mot de passe</label><input type="password" id="authPw" autocomplete="current-password" minlength="8" required><span class="hint" id="authHint" hidden>8 caractères minimum.</span></div>
+      <p class="form-err" id="authErr" hidden></p>
+      <button class="btn primary" type="submit" id="authSubmit">Se connecter</button>
+    </form>
+  </div>
+</div>
+<div class="app" hidden>
+  <aside class="side">
+    <div class="brand"><h1>Foul<span>é</span>e</h1><small>course · renfo · assiette</small></div>
+    <nav class="nav" id="nav" aria-label="Sections"></nav>
+    <div class="side-foot">
+      <span class="status js-week"></span>
+      <span class="status"><span class="dot js-ai-dot"></span><span class="js-ai">Connexion…</span></span>
+      <span class="status"><span class="dot js-sync-dot"></span><span class="js-sync">Connexion…</span></span>
+    </div>
+  </aside>
+  <div class="mainc">
+    <header class="topbar"><div class="wrap">
+      <div class="brand"><h1>Foul<span>é</span>e</h1></div>
+      <span class="status js-week"></span>
+      <span class="status" title="Sauvegarde"><span class="dot js-sync-dot"></span></span>
+    </div></header>
+    <main class="wrap">
+      <div id="banner" hidden></div>
+      <div id="view" class="stack" style="gap:20px"></div>
+    </main>
+  </div>
+</div>
+<div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+<dialog id="sheet" aria-label="Saisie"></dialog>
+<script src="/engine.js"></script>
+<script src="/app.js"></script>
+</body>
+</html>
